@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,500,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luis_Oenrique</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swipebox.css">
+</head>
+<body>
+        
+
+                
+    <header>
+        <div class="wrap">
+        <div class="logo">
+            <img src="image/logo.png" alt="logo">
+            <p>OENRIQUE</p>
+        </div>
+
+        <div class="nav animated fadeIn delay-1s" id="navigation">
+            <ul>
+                <li data-menuanchor="home"><a href="#home">Home</a></li>
+                <li data-menuanchor="about_me"><a href="#about_me">ABOUT</a></li>
+                <li data-menuanchor="service"><a href="#service">SERVICE</a></li>
+                <li data-menuanchor="portfolio"><a href="#portfolio">PORTFOLIO</a></li>
+                <li data-menuanchor="contact"><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+        </div>
+    </header>
+    
+    <div id="fullpage">
+        <div class="section" data-anchor="home">
+            <div class="home">
+                <div class="text">
+                    <p class="title animated fadeInLeft">Luis Oenrique</p>
+                    <p class="subtitle">User Experiense / User Interface Expert</p>
+                    <div class="button animated fadeIn delay-1s">
+                        <button class="button_white">KNOW MORE</button>
+                        <button class="button_see-through">HERE ME</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+     
+        <div class="section" data-anchor="about_me">
+            <div class="wrap-about_me">
+            <div class="about_me">
+                <div class="about_me-text">
+                    <div class="line"><p>__</p></div>
+                    <h2>
+                        Know more<br> about me</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptatum nesciunt illum quibusdam cupiditate sint repellendus hic! Ipsa, aliquid inventore et repellat, 
+                        necessitatibus earum praesentium quidem, nam aliquam id modi animi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Beatae sit optio veritatis dolor sed blanditiis quod commodi, necessitatibus possimus tempore officia aspernatur 
+                        inventore culpa animi corrupti ex laudantium dolorem quasi!</p>
+                    <div class="button animated fadeIn delay-1s">
+                        <button class="button_see-through">DOWNLOAD MY CV</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <div class="section" data-anchor="service">
+            <div class="wrap-service">
+                <div class="top">
+                    <div class="line"><p>__</p></div>
+                    <h2>Services</h2>
+                </div>
+                <div id="grid">
+                        <div class="icon"><img src="image/service/1.png"><p class="icons_subtext">User Research</p></div>
+                        <div class="icon"><img src="image/service/2.png"><p class="icons_subtext">IA And Wireframes</p></div>
+                        <div class="icon"><img src="image/service/3.png"><p class="icons_subtext">User Testing</p></div>
+                        <div class="icon"><img src="image/service/4.png"><p class="icons_subtext">Looks And Feel<br> Design (UI)</p></div>
+                        <div class="icon"><img src="image/service/5.png"><p class="icons_subtext">Delivery</p></div>
+                        <div class="icon"><img src="image/service/6.png"><p class="icons_subtext">Integration Support</p></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section" data-anchor="portfolio">
+            <div class="wrap-portfolio">
+                    <div class="top">
+                        <div class="line"><p>__</p></div>
+                        <h2>Portfolio</h2>
+                    </div>
+
+                    <div class="slimScroll">
+                        <div id="portfolio-div"> 
+                                <div id="gallery-grid">
+                                    <a rel="gallery" href="image/pictures/1.jpg" class="swipebox"><img id="pic-grid-1" src="image/pictures/1small.jpg" alt="image"></a>
+                                    <a rel="gallery" href="image/pictures/2.jpg" class="swipebox"><img id="pic-grid-2" src="image/pictures/2small.jpg" alt="image"></a>
+                                    <a rel="gallery" href="image/pictures/5.jpg" class="swipebox"><img id="pic-grid-3" src="image/pictures/5small.jpg" alt="image"></a>
+                                    <a rel="gallery" href="image/pictures/4.jpg" class="swipebox"><img id="pic-grid-4" src="image/pictures/4small.jpg" alt="image"></a>
+                                    <a rel="gallery" href="image/pictures/3.jpg" class="swipebox"><img src="image/pictures/3small.jpg" alt="image"></a>
+                                    <a rel="gallery" href="image/pictures/6.jpg" class="swipebox"><img src="image/pictures/6small.jpg" alt="image"></a>
+                                    <a rel="gallery" href="image/pictures/7.jpg" class="swipebox"><img src="image/pictures/7small.jpg" alt="image"></a>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+
+
+        
+       <div class="section" data-anchor="contact">
+            <p>section 5</p>
+        </div>
+    </div> 
+
+
+    
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/jquery.swipebox.js"></script>
+    <script src="js/jquery.viewportchecker.js"></script>
+    
+    <script>
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
+            anchors: ['home', 'about_me', 'service', 'portfolio', 'contact'],
+            menu: '#navigation',
+            css3: true,
+            scrollingSpeed: 1000,
+        });
+    });
+    </script>
+
+    
+    <script>
+    $(function(){
+      $('#portfolio-div').slimScroll({
+        height: '500px',
+        railVisible: true,
+		alwaysVisible: true,
+        wheelStep: 10,
+        allowPageScroll: true
+
+      });
+    });
+    </script>
+
+    
+    <script type="text/javascript">
+        (function() {
+        $( '.swipebox' ).swipebox();
+        })( jQuery );
+    </script>
+
+
+    <script>
+        jQuery(document).ready(function() {
+            jQuery('.icon').addClass("hidden").viewportChecker({
+            classToAdd: 'visible animated fadeIn',
+            offset: 100
+            });
+        });
+    </script>
+
+
+</body>
+</html>
