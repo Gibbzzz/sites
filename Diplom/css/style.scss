@@ -1,0 +1,308 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.604);
+    background-color: rgba(29, 29, 31, 0.764);
+    &-brand span {
+        font-size: 13px;
+        }
+    }
+.nav-link {
+    margin-left: 30px;
+}
+.section:first-child {
+    background: url(../img/start_img.jpg) no-repeat center;
+    background-size:cover;
+    color: #fff;
+    height: 100vh;
+    min-height: 600px; 
+}
+
+.get-contacts-btn {
+    margin-left:65px;
+    border:1px solid;
+    padding:7px;
+    border-radius:100px;
+    text-transform:uppercase;
+    
+}
+
+.main-text {
+    display: flex;
+    //align-items: center;
+    //justify-content: center;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    h1 {
+        font-size: 80px;
+        margin: 0.5rem;
+    }
+    span {
+        display: inline-block;
+        &::after{
+            content: '';
+            width: 20px;
+            height: 1px;
+            background-color: rgb(253, 242, 242);
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        &::before{
+            content: '';
+            width: 20px;
+            height: 1px;
+            background-color: #fff;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    }
+}
+
+.main-arrow {
+    display: flex;
+    height: 15vh;
+    justify-content: center;
+    align-items: center;
+    .arrow-down {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40%;
+        width: 60px;
+        height: 60px;   
+        border-radius: 50%;
+        background-color:rgb(199, 191, 191);
+        img {
+            display: flex;
+            position: relative;
+            height: 100%;
+        }
+        &:hover {
+            background-color: #fff;
+            box-shadow: 0 0 19px 2.3px rgba(120, 120, 122, 0.5);
+        }
+    }
+}
+
+
+
+.section:nth-child(2) {
+    background-image: url(../img/msk_n2.jpg);
+    background-size:cover;
+    align-items: center;
+    height: 100vh;
+    min-height: 600px;
+}
+
+
+.second_page {
+    color: #fff;
+    &__title {
+        justify-content: start;
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: 120px;
+    }
+}
+
+.section:nth-child(3) {
+    background-color: rgb(155, 147, 147);
+    color: #fff;
+    
+    h2 {
+        margin-top: 150px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.price-tags {
+    align-items: center;
+    padding:0 10% 0 10%;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    align-items: center;
+    .price-tag {
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+        width: 150px;
+        height: 350px;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        border-radius: 1.3rem;
+        transition: 0.5s;
+        img {
+            width: 120px;
+            height: auto;
+            }
+        &:hover {
+            box-shadow: 0 0 50px 10px rgba(204, 204, 223, 0.71);
+            cursor: pointer;
+        }
+        span {
+                text-transform: uppercase;
+                font-size: 14px;
+                color: #9fa4af;
+        }
+        h4 {
+                color: #4f4f6f;
+                font-size: 20px;
+                font-weight: 600;
+                margin: 10px;
+                sup {
+                    font-size: 1.5rem;
+                    vertical-align: super;
+                }
+                sub {
+                    font-size: 1.5rem;
+                }
+        }
+    
+        p {
+                color: #9fa4af;
+        }
+    
+        .price-btn {
+            background-color: #fff;
+            color: #9fa4af;
+            border: 1px solid #9fa4af;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 7px 30px;
+            border-radius: 100px;
+            transition: 0.2s;
+            position: inherit;
+            &:hover {
+                background-color: #6e45e2;
+                color: white;
+            }
+        }
+    } 
+}
+
+.section:nth-child(4) {
+    background-image: url(../img/price.jpg);
+    background-size:cover;
+    align-items: center;
+    height: 100vh;
+    min-height: 600px; 
+    .price__title {
+        h2 {
+            justify-content: start;
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 150px;
+            color: #fff;
+        } 
+    } 
+    
+    .card {
+        border-radius: 0;
+        .card-header {
+            padding: 7px 7px 7px 20px;
+            border: none;
+            background-color: rgb(199, 221, 235);
+            a {
+                color: rgb(59, 58, 58);
+                font-size: 16px;
+            }
+        }
+        .card-body {
+            padding-left: 50px;
+        }
+    }
+
+    [data-toggle="collapse"]:after {
+        display: inline-block;
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            color: black;
+                        
+          content: "\f054";
+          transform: rotate(90deg) ;
+          transition: all linear 0.25s;
+          align-items: flex-end;
+          }   
+        [data-toggle="collapse"].collapsed:after {
+          transform: rotate(0deg) ;
+    }
+}
+
+.section:nth-child(5) {
+    background-image: url(../img/neboskreby_moskva_siti_na_zakate2.jpg);
+    background-size:cover;
+    align-items: center;
+    height: 100vh;
+    min-height: 600px; 
+    .contact_page__title {
+        h2 {
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 150px;
+        } 
+    }
+    .contact {
+        margin-bottom: 20px;
+        .line {
+            color: black;
+            background-color: black; 
+            height: 1px; 
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .map {
+        iframe {
+            border: 1px solid red;
+            height: 260px;
+            width: 100%;
+        } 
+    }
+
+    .background {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        height: 50%;
+        z-index: 0;    
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    .main-arrow {
+        display: none;
+    }
+    .navbar {
+        position: absolute;
+    }
+    .main-text {
+        margin-top: 60%;
+        color: rgb(48, 46, 46);
+        span {
+            &::after, &::before{
+                background-color: rgb(48, 46, 46);
+            }
+        }
+    }
+    .contact {
+        justify-content: center;
+    }
+  }
+
+
+
