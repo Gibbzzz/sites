@@ -1,0 +1,439 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.604);
+    background-color: rgba(29, 29, 31, 0.764);
+    .icon {
+        width: 60px;
+        height: 60px;
+    }
+    &-brand span {
+        font-size: 13px;
+        }
+    }
+.nav-link {
+    margin-left: 30px;
+}
+
+.section:first-child {
+    background: url(../img/start_img.jpg) no-repeat center;
+    background-size:cover;
+    color: #fff;
+    height: 100vh;
+    min-height: 600px; 
+}
+
+.get-contacts-btn {
+    margin-left:65px;
+    border:1px solid;
+    padding:7px;
+    border-radius:100px;
+    text-transform:uppercase;
+    
+}
+
+.main-text {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    h1 {
+        font-size: 80px;
+        margin: 0.5rem;                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    }
+    span {
+        display: inline-block;
+        &::after{
+            content: '';
+            width: 20px;
+            height: 1px;
+            background-color: rgb(253, 242, 242);
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        &::before{
+            content: '';
+            width: 20px;
+            height: 1px;
+            background-color: #fff;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    }
+}
+
+.main-arrow {
+    display: flex;
+    height: 15vh;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    .arrow-down {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40%;
+        width: 60px;
+        height: 60px;   
+        border-radius: 50%;
+        background-color:rgb(199, 191, 191);
+        img {
+            display: flex;
+            position: relative;
+            height: 100%;
+        }
+        &:hover {
+            background-color: #fff;
+            box-shadow: 0 0 19px 2.3px rgba(120, 120, 122, 0.5);
+        }
+    }
+}
+
+
+
+.section:nth-child(2) {
+    background-image: url(../img/msk_n2.jpg);
+    background-size:cover;
+    align-items: center;
+    height: 100vh;
+    min-height: 600px;
+}
+
+
+.second_page {
+    color: #fff;
+    &__title {
+        justify-content: start;
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: 100px;
+    }
+}
+
+.section:nth-child(3) {
+    background-color: rgb(255, 255, 255);
+    color:  #64676b;
+    h2 {
+        margin-top: 100px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.price-tags {
+    padding:0;
+    margin-bottom: 20px;
+    display: flex;
+    .slick-dots li button:before{
+        font-family: 'slick';
+        font-size: 25px;
+        line-height: 20px;
+        }
+
+    .slick-prev:before, .slick-next:before {
+        font-size: 35px;
+        color: #64676b;
+        background: white;
+    }
+    .price-tag {
+        padding-left: 60px;
+        height: 500px;
+        background-color: #fff;
+        &-content {
+            width: 40%;
+            display: inline-block;
+            span {
+                text-transform: uppercase;
+                font-size: 20px;
+                font-weight: 600;
+                color: #64676b;
+            }
+            h4 {
+                color: #4f4f6f;
+                font-size: 20px;
+                font-weight: 600;
+                margin: 10px;
+            }
+            p {
+                color: #64676b;
+            }
+            .price-btn {
+                background-color: #fff;
+                color: #9fa4af;
+                border: 1px solid #9fa4af;
+                font-size: 13px;
+                text-transform: uppercase;
+                font-weight: 600;
+                padding: 7px 30px;
+                border-radius: 100px;
+                transition: 0.2s;
+                position: inherit;
+                margin-top: 20px;
+                &:hover {
+                    background-color: rgb(31, 168, 223);
+                    color: white;
+                    border-color: rgb(31, 168, 223);
+                }
+            }
+        }
+        &-img {
+            display: inline-block;
+            img {
+                margin-top: 60px;
+                margin-left: 60px;
+            }
+        }    
+    } 
+}
+
+.section:nth-child(4) {
+    //display: flex;
+    background-image: url(../img/price.jpg);
+    background-size:cover;
+    align-items: center;
+    height: 100vh;
+    min-height: 600px; 
+    .price__title {
+        h2 {
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 100px;
+            color: #fff;
+        } 
+    } 
+    
+    .card {
+        border-radius: 0;
+        border: none;
+        .card-header {
+            padding: 6px 6px 6px 20px;
+            background-color: rgb(199, 221, 235);
+            border: 1px solid white;
+            border-radius: 0;
+            a {
+                color: rgb(59, 58, 58);
+                font-size: 16px;
+                text-decoration: none;
+                transition: 0.1s;
+                &:hover, &:active {
+                    color: rgb(48, 45, 45);
+                    font-weight: 600;
+                    
+                }
+            }
+        }
+        .card-body {
+            padding-left: 50px;
+            .price-btn {
+                background-color: #fff;
+                color: #9fa4af;
+                border: 1px solid #9fa4af;
+                font-size: 13px;
+                text-transform: uppercase;
+                font-weight: 600;
+                padding: 7px 30px;
+                border-radius: 100px;
+                transition: 0.2s;
+                position: inherit;
+                margin-left: 50px;
+                &:hover {
+                    background-color: rgb(31, 168, 223);
+                    color: white;
+                }
+            }
+        }
+
+    [data-toggle="collapse"]:after {
+            font: normal normal normal 10px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            color: rgb(71, 71, 71);
+            content: "\f054";
+            transform: rotate(90deg) ;
+            transition: all linear 0.25s;
+            align-items: flex-end;
+            float: right;
+            margin: 6px 7px;
+            }   
+        [data-toggle="collapse"].collapsed:after {
+          transform: rotate(0deg) ;
+        }
+    }
+}
+
+.section:nth-child(5) {
+    background-image: url(../img/neboskreby_moskva_siti_na_zakate2.jpg);
+    background-color: rgb(140, 235, 248);
+    background-size: cover;
+    align-items: center;
+    height: 100vh;
+    min-height: 600px; 
+    .contact_page__title {
+        h2 {
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 120px;
+        } 
+    }
+    .contact {
+        margin-bottom: 20px;
+        .line {
+            color: black;
+            background-color: black; 
+            height: 1px; 
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .map {
+        iframe {
+            height: 260px;
+            width: 100%;
+        } 
+    }
+
+    .background {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        height: 50%;
+        z-index: 0;    
+    }
+
+    .container {
+        max-width: 450px;
+        margin: 0px auto;
+        padding: 10px 20px 10px 20px;
+        background-color: #ebebeb;
+        box-shadow: 0 0 1px #666;
+        border-radius: 10px;
+    }
+    
+    h2, .field-block {
+        margin-bottom: 3px;
+    }
+    
+    .field-block label, .field-block .field {
+        display: block;
+        width: 100%;
+    }
+    
+    .field-block label {
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+    
+    .field-block .field {
+        font-size: 14px;
+        padding: 7px 12px;
+        border: 1px solid #ccc;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+    
+    
+    .field-block .field:focus {
+      border-color: #66afe9;
+      outline: 0;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    }
+    .field-block {
+        #name, #email, #phone {
+            border-radius: 100px;
+        }
+    }
+    
+    .field-block textarea {
+        margin-bottom: 5px;
+        resize: vertical;
+        border-radius: 10px;
+    }
+    
+    .check-text {
+        font-size: 12px;
+        vertical-align: top;
+    }
+    
+    .price-btn {
+        background-color: #fff;
+        color: #9fa4af;
+        border: 1px solid #9fa4af;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 7px 30px;
+        border-radius: 100px;
+        transition: 0.2s;
+        position: inherit;
+        margin-left: 50px;
+        &:hover {
+            background-color:  rgb(31, 168, 223);
+            color: white;
+        }
+    }
+    
+}
+
+
+@media (max-width: 1024px) {
+
+    .main-arrow {
+        display: none;
+    }
+    .navbar {
+        position: absolute;
+    }
+    .main-text {
+        margin-top: 60%;
+        color: rgb(48, 46, 46);
+        span {
+            &::after, &::before{
+                background-color: rgb(48, 46, 46);
+            }
+        }
+    }
+    .contact {
+        justify-content: center;
+    }
+.section:nth-child(3) {
+    .price-tags{
+        margin: 0 20px 0 20px; 
+        .price-tag {
+            &-content {
+                width: 100%;
+            }
+            &-img {
+                display: none;
+            }
+        }
+    }
+}
+}
+
+  @media (max-width: 450px) {
+    .main-text {
+        h1 {
+            font-size: 57px;
+        }
+    }
+    .navbar {
+        .icon {
+            //margin-left: 20px;
+            width: 50px;
+            height: 50px;
+        }
+        &-brand {
+            font-size: 16px;
+        }
+    }
+    
+  }
+  
