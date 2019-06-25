@@ -1,0 +1,59 @@
+USE DBTestPractice;
+GO
+
+1.“ребуетс€ написать запрос, который выведет номер, лицевой счет, дату в формате Ђдень.мес€ц.годї и сумму ближайших по дате двух счетов, у которых день начислени€ в промежутке от 8 до 12 включительно. 
+SELECT * FROM dbo.FD_Bills;
+SELECT TOP(2) C_Number, F_Subscr, CONVERT(VARCHAR(10), D_Date, 104) AS [Date], N_Amount from dbo.FD_Bills
+WHERE DAY(D_Date)  >= '8' and DAY(D_Date) <= '12' 
+ORDER BY D_Date DESC;
+
+
+2.“ребуетс€ вывести уникальные суммы начислений по услуге ’¬— за все врем€ 
+SELECT DISTINCT N_Amount from dbo.FD_Bills WHERE C_Sale_Items = '’¬—';
+
+
+3.“ребуетс€ вывести услугу и среднюю сумму начислений за все врем€, у которой средн€€ сумма превышает 120 р. 
+SELECT C_Sale_Items, AVG(N_Amount) as AVG_Amount FROM dbo.FD_Bills
+GROUP BY C_Sale_Items
+HAVING AVG(N_Amount) > '120';
+
+
+4.“ребуетс€ вывести общие суммы начислений за каждый мес€ц по каждой услуге за все врем€ с сортировкой по мес€цам, с под итогами. 
+SELECT MONTH(D_Date)+YEAR(D_Date)*100 AS N_Month, C_Sale_Items, SUM(N_Amount) AS N_Amount_Sum FROM dbo.FD_Bills
+GROUP BY
+ROLLUP (MONTH(D_Date)+YEAR(D_Date)*100, C_Sale_Items);
+
+
+5.“ребуетс€ вывести общие суммы начислений за каждый мес€ц по каждой услуге за все врем€, так чтобы услуги были строках, мес€ца в столбцах 
+SELECT C_Sale_Items, 
+'201812'= ISNULL(( SELECT SUM(N_Amount) FROM dbo.FD_Bills WHERE MONTH(D_Date)+YEAR(D_Date)*100 = 201812 AND C_Sale_Items = Q.C_Sale_Items ), 0),
+'201901'= ISNULL(( SELECT SUM(N_Amount) FROM dbo.FD_Bills WHERE MONTH(D_Date)+YEAR(D_Date)*100 = 201901 AND C_Sale_Items = Q.C_Sale_Items ), 0),
+'201902'= ISNULL(( SELECT SUM(N_Amount) FROM dbo.FD_Bills WHERE MONTH(D_Date)+YEAR(D_Date)*100 = 201902 AND C_Sale_Items = Q.C_Sale_Items ), 0)
+FROM dbo.FD_Bills Q GROUP BY C_Sale_Items;
+
+
+6.“ребуетс€ вывести дату номер и сумму начислений, дл€ которых сумма превышает сумму предыдущего по дате начислени€ 
+WITH T1 AS
+(
+	SELECT D_Date, C_Number, N_Amount, lag(N_Amount) OVER(ORDER BY D_Date) AS N_Amount_B FROM dbo.FD_Bills
+)
+SELECT * FROM T1 WHERE N_Amount > N_Amount_B;
+
+
+7.“ребуетс€ вывести список документов, совершенно летних абонентов, проживающих на проспекте Ћенина. 
+¬ формате ‘амили€ инициал., Ќомер документа, ƒата в формате день.мес€ц.год 
+SELECT C_SecondName +' '+ LEFT(C_FirstName, 1)+'.' AS C_FIO, C_Number, CONVERT(VARCHAR(10), D_Date, 104) AS D_Date FROM dbo.SD_Subscrs JOIN dbo.DD_Docs 
+ON dbo.SD_Subscrs.LINK = dbo.DD_Docs.F_Subscr WHERE dbo.SD_Subscrs.C_Address LIKE ('г. „ебоксары, пр-кт. Ћенина%')
+AND YEAR(GETDATE()) - YEAR(dbo.SD_Subscrs.D_BirthDate) > 18;
+
+
+8.“ребуетс€ вывести номер и дату всех родительских документов, документа с номером "4-д/1", с сортировкой по дате 
+WITH Recursive (C_Number, F_Docs, D_Date)
+AS
+(
+    SELECT C_Number, F_Docs, D_Date FROM dbo.DD_Docs t WHERE t.C_Number = '4-д/1'  
+		UNION ALL
+    SELECT t.C_Number, t.F_Docs, t.D_Date FROM dbo.DD_Docs t JOIN Recursive r ON t.LINK = r.F_Docs
+)
+SELECT C_Number, D_Date FROM Recursive r 
+ORDER BY D_Date;

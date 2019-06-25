@@ -1,0 +1,70 @@
+// ДАНО: Есть дерево, состоящее из двух типов узлов:
+// 1. УЗЕЛ: содержит две ветки { left: УЗЕЛ/ЛИСТ, right: УЗЕЛ/ЛИСТ } 
+// 2. ЛИСТ: представляет собой строку
+// ТРЕБУЕТСЯ: Обойти дерево и вывести для каждого ЛИСТа следующую информацию: 
+// <путь>: <3 самых длинных слова из строки>
+
+// ПРИМЕР ДАННЫХ
+var tree = {
+   left: {
+       left: "Первое предложение из произвольной строки",
+       right: {
+           left: "Другое произвольное предложение",
+           right: "Еще одно следующее предложение, но не очень длинное"
+       }
+   },
+   right: {
+       left: {
+           left: {
+               left: "Еще одно не очень длинное предложение",
+               right: ""
+           }, 
+           right: {
+               left: "",
+               right: "Еще одно не очень длинное предложение"
+           }
+       },
+       right: {
+           left: {
+               left: "Предложение",
+               right: "Еще одно следующее предложение, но не очень длинное"
+           },
+           right: {
+               left: "Другое произвольное предложение",
+               right: {
+                   left: "Два слова",
+                   right: "Еще одно следующее предложение, но не очень длинное"
+               }
+           }
+       }
+   }
+}
+
+// РЕЗУЛЬТАТ ВЫВЕСТИ ЧЕРЕЗ console.log
+
+//сортировка массива по убыванию
+        function sortArray(array) {
+            return array.sort(function(a, b){
+                return b.length - a.length;
+            })
+        }
+
+        //разбиение предложений на слова
+        function splitWords(word) {
+            if (word != null || word !== undefined) 
+                return word.replace(',', '').split(' ');
+        }
+ 
+        
+        function getWords(data, way){
+            if(data == null)
+            return;
+            if(typeof(data)=="string"){
+                if(sortArray(splitWords(data)).length >=3)
+                console.log(way + ((sortArray(splitWords(data))).slice(0, 3)));
+            }
+            getWords(data.left, way + 'left/');  
+            getWords(data.right, way + 'right/');
+        }
+
+        getWords(tree, 'tree/');

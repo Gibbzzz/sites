@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Баранов А.С. лабы</title>
+    <link href="style_lab.css" type="text/css" rel="stylesheet">
+</head>
+<br>
+
+<h3>Вычисление плотности</h3>
+<form name="density" id="density_style">
+    Введите массу тела(kg) <input type="text" name="mass" size="10" class="textField"></br>
+    Введите обьем тела(m3) <input type="text" name="volume" size="10" class="textField"></br>
+    <p><input type="button" name="button" value="Рассчитать" onclick="get_Density()"></p>
+    Плотность равна(kg/m3) <input type="text" name="res_density" size="10" class="textField">
+</form>
+<script>
+    function get_Density(){
+        var a = parseInt(document.density.mass.value);
+        var b = parseInt(document.density.volume.value);
+        var s = a/b;
+        document.density.res_density.value = s;
+    }
+</script>
+
+<h3>Создайте программу, вычисляющую значение функции Y для введенных значений Х. </h3>
+<img src="StructureData/image/формула.jpg">
+<form name="funct" id="funct_style">
+    Введите x <input type="text" name="x" size="10" class="textField"></br>
+    <p><input type="button" name="button2" value="Рассчитать" onclick="get_Result()"></p>
+    Y равен <input type="text" name="res_funct" size="10" class="textField">
+</form>
+<script>
+    function get_Result(){
+        var x = parseInt(document.funct.x.value);
+        var y = (Math.pow(2,(1/x - 1)) - Math.sin(x - 1))*(3 - x);
+        document.funct.res_funct.value = y;
+    }
+</script>
+
+<h3>Определить  у какой из девушек эффективность танцев по части приглашений на свидания больше.</h3>
+<p>На той же дискотеке Катю пригласили на танец N1 раз и при этом пытались договориться о свидании K1 раз.</br>
+Лену же приглашали на танец N2 раз, а на свидание – K2 раз.</br>
+ Определить  у какой из девушек эффективность танцев по части приглашений на свидания больше. </p>
+<form name="girls" id="girls_style">
+    Введите N1 <input type="text" name="n1" size="10" class="textField"></br>
+    Введите K1 <input type="text" name="k1" size="10" class="textField"></br>
+    Введите N2 <input type="text" name="n2" size="10" class="textField"></br>
+    Введите K2 <input type="text" name="k2" size="10" class="textField"></br>
+
+    <p><input type="button" name="button3" value="Рассчитать" onclick="get_Result2()"></p>
+    Эффективность больше <input type="text" name="res_funct2" size="10" class="textField">
+</form>
+<script>
+    function get_Result2(){
+        var kate = document.girls.k1.value/document.girls.n1.value;
+        var lena = document.girls.k2.value/document.girls.n2.value;
+        var res_funct2;
+        if(kate > lena){
+            res_funct2 = "у Кати";
+        }else if(kate < lena){
+            res_funct2 = "у Лены";
+        }else{
+            res_funct2 = "одинаково"
+        }
+        document.girls.res_funct2.value = res_funct2;
+    }
+</script>
+
+
+<h3>Задания на конструкцию select/case</h3>
+<p>3. – 4. Задана следующая шкала эффективности внедрения новых технологий (%).</p>
+<table border="1" cellspacing="0">
+    <tr><th>0-10</th><th>11-25</th><th>26-50</th><th>51-100</th><th>>100</th></tr>
+    <tr><td>невысокая</td><td>средняя</td><td>высокая</td><td>очень высокая</td><td>революционная</td></tr>
+</table>
+<p>Составить программу, которая по введенной величине эффективности технологии выдает ее словесную характеристику.</p>
+<form name="effectiveness">
+    Введите коэффициент эффективности(%)
+    <p><input type="text" name="effect" size="10" class="textField"></br></p>
+    <p><input type="button" name="button4" value="Рассчитать" onclick="get_Result4()"></p>
+    Результат: <input type="text" name="res_effect" size="10" class="textField">
+</form>
+<script>
+    function get_Result4() {
+        var a = document.effectiveness.effect.value;
+        var s;
+        switch (true){
+            case (a >= 0 && a <= 10) : s = "невысокая";
+            break;
+
+            case (a > 10 && a <=25) : s = "средняя";
+            break;
+
+            case (a > 25 && a <= 50) : s = "высокая";
+            break;
+
+            case (a > 50 && a <= 100) : s = "очень высокая";
+            break;
+
+            case (a > 100) : s = "революционная";
+            break;
+        }
+        document.effectiveness.res_effect.value = s;
+    }
+</script>
+
+
+<h3>Справедливый декан</h3>
+<p>На первый курс факультета принимается K студентов. Каждую сессию N1% студентов на потоке получают хотя бы одну двойку.</br>
+    Деканат дает возможность пересдачи полученных хвостов. С этой задачей справляются только N2% студентов.</br>
+    Остальных приходится отчислять.  Определить сколько студентов будет на потоке к концу пятого курса. </p>
+<form name="students" id="students_style">
+    Введите K <input type="text" name="K" size="10" class="textField"></br>
+    Введите N1 <input type="text" name="N1" size="10" class="textField"></br>
+    Введите N2 <input type="text" name="N2" size="10" class="textField"></br>
+
+    <p><input type="button" name="button3" value="Рассчитать" onclick="get_Result3()"></p>
+    Осталось студентов <input type="text" name="res_funct3" size="10" class="textField">
+</form>
+<script>
+    function get_Result3() {
+        var students = document.students.K.value;
+        for(i = 0; i < 10; i++){
+            students = students - students*document.students.N1.value/100*(100 - document.students.N2.value)/100;
+        }
+        document.students.res_funct3.value = Math.round(students);
+    }
+</script>
+
+
+
+<h3>Циклы</h3>
+<P>3.	В начале апреля на дереве распустилось K листочков, каждый день их количество возрастает на M %.</br>
+Определить через, сколько дней распуститься половина всех листьев, если на дереве было L почек.</p>
+<form name = "leafs">
+    Введите K <input type="text" name = "K" size="10" class="textField"></br>
+    Введите M% <input type="text" name = "M" size="10" class="textField"></br>
+    Введите L <input type="text" name = "L" size="10" class="textField"></br>
+    <input type="button" name="button5" value="Рассчитать" onclick="get_Result5()">
+    Итог <input type="text" name="res_funct5" size="10" class="textField">
+</form>
+<script>
+    function  get_Result5() {
+        var K = document.leafs.K.value;
+        var M = document.leafs.M.value;
+        var L = document.leafs.L.value;
+        var days = 0;
+        while (K < L/2){
+            K += K*M/100;
+            days++;
+        }
+        document.leafs.res_funct5.value = days;
+    }
+</script>
+
+</body>
+</html>
