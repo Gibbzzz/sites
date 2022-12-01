@@ -8,4 +8,4 @@ My web pages
 
 [Creative_Digital_Agencies](https://gibbzzz.github.io/sites/Creative_Digital_Agencies/) - Creative_Digital_Agencies
 
-[SportShop](https://Gibbzzz/gibbzzz.github.io/sites/SportShop/) - SportShop
+[SportShop](https://gibbzzz.github.io/sites/SportShop/) - SportShop
