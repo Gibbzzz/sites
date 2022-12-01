@@ -2,10 +2,10 @@
 My web pages
 
 
-[Diplom](https://gibbzzz.github.io/Diplom.loc/) - диплом
+[Diplom](https://gibbzzz.github.io/sites/Diplom.loc/) - диплом
 
-[AgataBielen](https://gibbzzz.github.io/AgataBielenPage/) - страница по макету
+[AgataBielen](https://gibbzzz.github.io/sites/AgataBielenPage/) - страница по макету
 
-[Creative_Digital_Agencies](https://gibbzzz.github.io/Creative_Digital_Agencies/) - Creative_Digital_Agencies
+[Creative_Digital_Agencies](https://gibbzzz.github.io/sites/Creative_Digital_Agencies/) - Creative_Digital_Agencies
 
-[SportShop](https://Gibbzzz/gibbzzz.github.io/SportShop/) - SportShop
+[SportShop](https://Gibbzzz/gibbzzz.github.io/sites/SportShop/) - SportShop
